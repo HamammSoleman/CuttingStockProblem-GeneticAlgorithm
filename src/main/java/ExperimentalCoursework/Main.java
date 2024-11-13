@@ -19,20 +19,20 @@ public class Main {
         Main main = new Main();
         main.Output = new ArrayList<Float>();
 
-        int simulationTime = 5;
+        int simulationTime = 30;
         int populationSize = Main.getInstance().randomNumber(20,51);
         float mutationRate = 0.01f * Main.getInstance().randomNumber(0,51);
         float recombinationRate = 0.01f * Main.INSTANCE.randomNumber(30,101);
 
-        System.out.printf("Executing both Genetic algorithms for %d seconds...", simulationTime);
+        System.out.printf("Executing both Genetic algorithms for %d seconds...\n", simulationTime);
         //Creates Threads and runs the Genetic Algorithm for the Baseline Solution
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             GeneticAlgorithm onePointCrossover = new orderOneCrossover(simulationTime, populationSize, mutationRate, recombinationRate);
             onePointCrossover.start();
         }
 
         //Creates Threads and runs the Genetic Algorithm for the Novel Solution
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             GeneticAlgorithm partiallyMappedCrossover = new partiallyMappedCrossover(simulationTime, 50, 0.1f, 0.55f);
             partiallyMappedCrossover.start();
         }
@@ -55,12 +55,12 @@ public class Main {
     public void doOnThreadCompletion() {
         //Print Output Into Console when all threads finish
         if (Main.getInstance().Output.size() == 50) {
-            System.out.println("Completed Execution of Genetic Algorithms");
+            System.out.print("Completed Execution of Genetic Algorithms, below are the results \n");
+            System.out.println("Best solution costs are the combined from both algorithm executions, sorted from best cheapest to most expensive:\n");
             Collections.sort(Main.getInstance().Output);
             for (Float cost : Output) {
                 System.out.print(cost + ",");
             }
-            System.out.println("Best solution costs are the result of both algorithms, sorted from best cheapest to most expensive");
         }
     }
 
