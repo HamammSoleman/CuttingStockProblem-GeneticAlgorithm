@@ -1,0 +1,40 @@
+#PROBLEM DEFINITION
+-Multiple standard Sock lengths available, as options to cut from, increasing possible combinations
+-Minimisation Problem
+
+#TODO
+1-Import Data from Input.txt    #DONE
+2-Create Problem Class, with these methods:
+    Evaluate() - Some kind of decoding function #DONE
+        check if greater than largest
+        then check if greater than smallest
+        choose that stock length
+    GenerateRandom()    #DONE
+3-Write the genetic algorithm   #DONE
+4-Complete novel variant of genetic algorithm, Partially Mapped crossover, introduce penalties
+for decoding function, use research to show it only mutates for some generations    #DONE
+5-perform Welsh's t-test, Use multithreading to get wider range of solutions    #DONE
+also, ensure pseudo-random parameters are used each instance
+
+#NOTES
+-write about decoding function
+-write about how this makes the order matter less
+-explain how introducing penalties helped improve algorithm
+
+#FOR FINAL REPORT
+-Partially Mapped Crossover, maps a selected substring from one parent to the corrseponding
+positions of the other parent. The remaining positions are filled based on the mapping.
+-Explain differences between Welsh's t-test, draw hypothesis which explain differences, what caused difference
+draw out some evidence
+-Local optima, with random parameters
+
+H1 - Alternate Hypothesis, what we want to prove
+H0 - Null hypothesis, A is, on average, no better than B
+
+m - available stock lengths
+l - list of stock length sizes
+c - costs of each stock length
+--lengths measured in cm, cost in £
+n - requested piece lengths
+q - associated quantities of requested piece lengths
+
