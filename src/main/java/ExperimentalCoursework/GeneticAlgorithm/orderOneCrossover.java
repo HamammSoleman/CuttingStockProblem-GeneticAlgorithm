@@ -42,7 +42,7 @@ public class orderOneCrossover extends GeneticAlgorithm {
             offspring.set(i, parent1.get(i));
         }
         //Remove mapped genetic information from other parent, handle duplicates
-//        parent2.removeAll(genesToBeMapped);
+        //parent2.removeAll(genesToBeMapped); Only Here For Debug Purposes
         int index = 0;
         while (genesToBeMapped.size() != 0) {
             if (parent2Copy.get(index).equals(genesToBeMapped.get(0))) {
